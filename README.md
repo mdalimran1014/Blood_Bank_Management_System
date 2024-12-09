@@ -1,3 +1,3 @@
 # Blood_Bank
 
-This is our colaboative project on blood bank
+This is our collaborative project on blood bank
