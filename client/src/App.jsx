@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-// import Login from "./pages/Login";
+import Login from "./pages/Login";
 // import Register from "./pages/Register";
 // import BloodRequestForm from "./pages/Patient/BloodRequestForm";
 // Import other pages like DonorDashboard, AdminDashboard, etc., when ready
@@ -14,8 +14,8 @@ const App = () => {
       <div className="bg-gray-50">
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/login" element={<Login />} />
-           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+           {/*<Route path="/register" element={<Register />} />
            <Route path="/request-blood" element={<BloodRequestForm />} /> */}
           {/* Add routes for other pages when created */}
         </Routes>
