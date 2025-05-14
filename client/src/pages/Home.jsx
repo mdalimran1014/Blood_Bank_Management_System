@@ -1,4 +1,4 @@
-// Home.jsx
+// pages/Home.jsx
 import React from "react";
 import HeroSection from "../components/HeroSection";
 import Campaigns from "../components/Campaigns";

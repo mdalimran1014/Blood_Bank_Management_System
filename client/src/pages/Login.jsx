@@ -1,19 +1,23 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import api from "../services/api"; // <-- Axios instance
+import { Link, useNavigate } from "react-router-dom";
+import { login } from "../services/authServices"; // <-- Use the authService for login
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState(""); 
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setErrorMsg("");
     try {
-      const res = await api.post("/auth/login", { email, password });
-      console.log("Login successful:", res.data);
-      // Optional: redirect based on user role or show toast
+      const res = await login({ email, password }); // <-- Call the login function from authServices
+      console.log("Login successful:", res);
+      navigate("/dashboard");
     } catch (err) {
-      console.error("Login error:", err.response?.data?.message || err.message);
+      console.error("Login error:", err.message);
+      setErrorMsg("Something went wrong. Please try again later.");
     }
   };
 
@@ -21,6 +25,7 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-96">
         <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
+        {errorMsg && <p className="mb-4 text-red-600 text-sm text-center">{errorMsg}</p>}
         <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-600">Email</label>

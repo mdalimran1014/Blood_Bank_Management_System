@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import api from "../services/api"; // Axios instance
+import { register } from "../services/authServices"; // <-- Use the authService for register
 
 const Register = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const Register = () => {
     name: "",
     email: "",
     password: "",
-    role: "donor", // default role
+    role: "donor",
   });
 
   const handleChange = (e) => {
@@ -22,11 +22,11 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await api.post("/auth/register", formData);
-      console.log("Registered:", res.data);
+      const res = await register(formData); // <-- Call the register function from authServices
+      console.log("Registered:", res);
       navigate("/login");
     } catch (err) {
-      console.error("Registration error:", err.response?.data?.message || err.message);
+      console.error("Registration error:", err.message);
     }
   };
 

@@ -1,9 +1,19 @@
 // src/services/api.js
+
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "http://localhost:5000/api", // Adjust to your backend URL
-  withCredentials: true, // Optional, for cookies/auth
+// Creating an axios instance with base URL (can be customized for production)
+const API = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api", // Replace this if needed
 });
 
-export default api;
+// Setting up an interceptor to automatically add the token from localStorage
+API.interceptors.request.use((req) => {
+  const token = localStorage.getItem("token"); // Get token from localStorage
+  if (token) {
+    req.headers.Authorization = `Bearer ${token}`; // Attach token if present
+  }
+  return req;
+});
+
+export default API;
