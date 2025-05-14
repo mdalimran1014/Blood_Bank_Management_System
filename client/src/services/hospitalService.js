@@ -15,3 +15,17 @@ export const getHospitals = async (token) => {
   });
   return res.data;
 };
+
+
+
+
+
+
+// import axios from "axios";
+
+// const API = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+
+// export const registerHospital = async (data) => {
+//   const res = await axios.post(`${API}/hospitals/register`, data);
+//   return res.data;
+// };

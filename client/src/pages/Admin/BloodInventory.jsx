@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getInventoryData } from "../services/adminService";
+import { getInventoryData } from "../../services/adminService";
 
 const BloodInventory = () => {
   const [inventory, setInventory] = useState([]);

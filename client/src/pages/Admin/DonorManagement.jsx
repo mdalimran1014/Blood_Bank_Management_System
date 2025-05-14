@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAllDonors, deleteDonor } from "../services/adminService";
+import { getAllDonors, deleteDonor } from "../../services/adminService";
 
 const DonorManagement = () => {
   const [donors, setDonors] = useState([]);

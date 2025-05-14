@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getRequestHistory } from "../services/patientService";
+import { getRequestHistory } from "../../services/patientService";
 
 const RequestHistory = () => {
   const [requests, setRequests] = useState([]);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getUserProfile, updateUserProfile } from "../services/donorService";
+import { getUserProfile, updateUserProfile } from "../../services/donorService";
 
 const DonorProfileUpdate = () => {
   const [form, setForm] = useState({ name: "", bloodType: "", phone: "" });
