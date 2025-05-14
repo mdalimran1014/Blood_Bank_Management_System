@@ -3,17 +3,33 @@
 import React from "react";
 
 const campaigns = [
-  {
+    {
     title: "City Blood Drive",
     date: "June 15, 2025",
     location: "Community Hall, Downtown",
     description: "Join us in saving lives through our monthly city-wide blood drive.",
+    image: "https://via.placeholder.com/400x200?text=City+Blood+Drive",
   },
   {
     title: "University Donation Camp",
     date: "July 5, 2025",
     location: "GSTU Campus",
     description: "Organized by the student council to support local hospitals.",
+    image: "https://via.placeholder.com/400x200?text=University+Camp",
+  },
+  {
+    title: "Winter Warmth Blood Camp",
+    date: "December 10, 2024",
+    location: "Red Cross Center",
+    description: "A special winter drive supporting emergency surgery patients.",
+    image: "https://via.placeholder.com/400x200?text=Winter+Blood+Camp",
+  },
+  {
+    title: "Youth Blood Drive",
+    date: "October 20, 2024",
+    location: "City Youth Club",
+    description: "Young volunteers step up to donate and raise awareness.",
+    image: "https://via.placeholder.com/400x200?text=Youth+Drive",
   },
 ];
 
