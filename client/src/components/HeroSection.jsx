@@ -14,7 +14,7 @@ const HeroSection = () => {
         </p>
         <div className="flex flex-col md:flex-row justify-center gap-4">
           <Link
-            to="/donor/register"
+            to="/register?role=donor"
             className="bg-white text-red-600 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition"
           >
             Become a Donor

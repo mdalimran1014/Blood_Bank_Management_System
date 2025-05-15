@@ -1,9 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/Error/NotFound";
 import Unauthorized from "./pages/Error/Unauthorized";
+import HospitalRegistration from "./pages/Hospital/HospitalRegistration";
 
 // Admin Pages
 // import AdminDashboard from "./pages/Admin/AdminDashboard";
@@ -12,21 +17,19 @@ import Unauthorized from "./pages/Error/Unauthorized";
 // import BloodInventory from "./pages/Admin/BloodInventory";
 // import HospitalManagement from "./pages/Admin/HospitalManagement";
 
-// Donor Pages
+// // Donor Pages
 // import DonorDashboard from "./pages/Donor/DonorDashboard";
 // import DonorProfileUpdate from "./pages/Donor/DonorProfileupdate";
 // import DonationHistory from "./pages/Donor/DonationHistory";
 
-// Patient Pages
+// // Patient Pages
 // import PatientRegistration from "./pages/Patient/PatientRegistration";
 // import BloodRequestForm from "./pages/Patient/BloodRequestForm";
 // import RequestHistory from "./pages/Patient/RequestHistory";
 
 // Hospital Page
-import HospitalRegistration from "./pages/Hospital/HospitalRegistration";
 
 // Common
-import Navbar from "./components/Navbar";
 
 // (Optional) Auth guards (to be added later)
 // import ProtectedRoute from "./utils/ProtectedRoute";
@@ -41,7 +44,27 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/hospital/register" element={<HospitalRegistration />} />
+
+        {/* Admin Routes */}
+        {/* <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/donors" element={<DonorManagement />} />
+        <Route path="/admin/requests" element={<RequestManagement />} />
+        <Route path="/admin/hospitals" element={<HospitalManagement />} />
+        <Route path="/admin/inventory" element={<BloodInventory />} />
+
+        {/* Donor Routes */}
+        {/* <Route path="/donor/dashboard" element={<DonorDashboard />} />
+        <Route path="/donor/profile" element={<DonorProfileUpdate />} />
+        <Route path="/donor/history" element={<DonationHistory />} />  */}
+
+        {/* Patient Routes */}
+        {/* <Route path="/patient/register" element={<PatientRegistration />} />
+        <Route path="/patient/request" element={<BloodRequestForm />} />
+        <Route path="/patient/history" element={<RequestHistory />} /> */} 
 
         {/* Admin Routes */}
         {/* <Route path="/admin/dashboard" element={<ProtectedRoute role="admin"><AdminDashboard /></ProtectedRoute>} /> */}

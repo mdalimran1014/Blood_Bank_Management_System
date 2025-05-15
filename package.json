@@ -1,0 +1,20 @@
+{
+  "name": "blood_bank_management_system",
+  "version": "1.0.0",
+  "description": "This is our collaborative project on blood bank managemant syatem.\r step 1-> Requirement analysis\r step 2-> Database design(Normalization,Er diagram,schema)\r step 3-> Architectural design\r step 4-> implementation and design",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "lucide-react": "^0.510.0",
+    "react": "^19.1.0"
+  }
+}
