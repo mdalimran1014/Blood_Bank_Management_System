@@ -1,8 +1,20 @@
-// import mongoose from 'mongoose';
+import express from 'express';
+import {
+  getDashboardStats,
+  manageDonors,
+  manageRequests,
+  manageInventory,
+  manageHospitals,
+} from '../controllers/adminController.js';
+import { verifyToken, verifyAdmin } from '../middleware/auth.js';
 
-// const adminSchema = new mongoose.Schema({
-//   email: { type: String, unique: true },
-//   password: String,
-// }, { timestamps: true });
+const router = express.Router();
 
-// export default mongoose.model('Admin', adminSchema);
+// Admin-only routes
+router.get('/dashboard', verifyToken, verifyAdmin, getDashboardStats);
+router.get('/donors', verifyToken, verifyAdmin, manageDonors);
+router.get('/requests', verifyToken, verifyAdmin, manageRequests);
+router.get('/inventory', verifyToken, verifyAdmin, manageInventory);
+router.get('/hospitals', verifyToken, verifyAdmin, manageHospitals);
+
+export default router;

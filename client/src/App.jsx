@@ -11,33 +11,27 @@ import Unauthorized from "./pages/Error/Unauthorized";
 import HospitalRegistration from "./pages/Hospital/HospitalRegistration";
 
 // Admin Pages
-// import AdminDashboard from "./pages/Admin/AdminDashboard";
-// import DonorManagement from "./pages/Admin/DonorManagement";
-// import RequestManagement from "./pages/Admin/RequestManagement";
-// import BloodInventory from "./pages/Admin/BloodInventory";
-// import HospitalManagement from "./pages/Admin/HospitalManagement";
+import AdminDashboard from "./pages/Admin/AdminDashboard";
+import DonorManagement from "./pages/Admin/DonorManagement";
+import RequestManagement from "./pages/Admin/RequestManagement";
+import BloodInventory from "./pages/Admin/BloodInventory";
+import HospitalManagement from "./pages/Admin/HospitalManagement";
 
-// // Donor Pages
-// import DonorDashboard from "./pages/Donor/DonorDashboard";
-// import DonorProfileUpdate from "./pages/Donor/DonorProfileupdate";
-// import DonationHistory from "./pages/Donor/DonationHistory";
+// Donor Pages
+import DonorDashboard from "./pages/Donor/DonorDashboard";
+import DonorProfileUpdate from "./pages/Donor/DonorProfileupdate";
+import DonationHistory from "./pages/Donor/DonationHistory";
 
-// // Patient Pages
-// import PatientRegistration from "./pages/Patient/PatientRegistration";
-// import BloodRequestForm from "./pages/Patient/BloodRequestForm";
-// import RequestHistory from "./pages/Patient/RequestHistory";
+// Patient Pages
+import PatientRegistration from "./pages/Patient/PatientRegistration";
+import BloodRequestForm from "./pages/Patient/BloodRequestForm";
+import RequestHistory from "./pages/Patient/RequestHistory";
 
-// Hospital Page
-
-// Common
-
-// (Optional) Auth guards (to be added later)
-// import ProtectedRoute from "./utils/ProtectedRoute";
+import ProtectedRoute from "./utils/ProtectedRoute";
 
 const App = () => {
   return (
     <>
-    <router>
       <Navbar />
       <Routes>
         {/* Public Routes */}
@@ -50,44 +44,26 @@ const App = () => {
         <Route path="/hospital/register" element={<HospitalRegistration />} />
 
         {/* Admin Routes */}
-        {/* <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/admin/donors" element={<DonorManagement />} />
-        <Route path="/admin/requests" element={<RequestManagement />} />
-        <Route path="/admin/hospitals" element={<HospitalManagement />} />
-        <Route path="/admin/inventory" element={<BloodInventory />} />
-
-        {/* Donor Routes */}
-        {/* <Route path="/donor/dashboard" element={<DonorDashboard />} />
-        <Route path="/donor/profile" element={<DonorProfileUpdate />} />
-        <Route path="/donor/history" element={<DonationHistory />} />  */}
-
-        {/* Patient Routes */}
-        {/* <Route path="/patient/register" element={<PatientRegistration />} />
-        <Route path="/patient/request" element={<BloodRequestForm />} />
-        <Route path="/patient/history" element={<RequestHistory />} /> */} 
-
-        {/* Admin Routes */}
-        {/* <Route path="/admin/dashboard" element={<ProtectedRoute role="admin"><AdminDashboard /></ProtectedRoute>} /> */}
-        {/*<Route path="/admin/donors" element={<ProtectedRoute role="admin"><DonorManagement /></ProtectedRoute>} />
+        <Route path="/admin/dashboard" element={<ProtectedRoute role="admin"><AdminDashboard /></ProtectedRoute>} />
+        <Route path="/admin/donors" element={<ProtectedRoute role="admin"><DonorManagement /></ProtectedRoute>} />
         <Route path="/admin/requests" element={<ProtectedRoute role="admin"><RequestManagement /></ProtectedRoute>} />
         <Route path="/admin/inventory" element={<ProtectedRoute role="admin"><BloodInventory /></ProtectedRoute>} />
-        <Route path="/admin/hospitals" element={<ProtectedRoute role="admin"><HospitalManagement /></ProtectedRoute>} /> */}
+        <Route path="/admin/hospitals" element={<ProtectedRoute role="admin"><HospitalManagement /></ProtectedRoute>} />
 
         {/* Donor Routes */}
-        {/* <Route path="/donor/dashboard" element={<ProtectedRoute role="donor"><DonorDashboard /></ProtectedRoute>} />
+        <Route path="/donor/dashboard" element={<ProtectedRoute role="donor"><DonorDashboard /></ProtectedRoute>} />
         <Route path="/donor/profile" element={<ProtectedRoute role="donor"><DonorProfileUpdate /></ProtectedRoute>} />
-        <Route path="/donor/history" element={<ProtectedRoute role="donor"><DonationHistory /></ProtectedRoute>} /> */}
+        <Route path="/donor/history" element={<ProtectedRoute role="donor"><DonationHistory /></ProtectedRoute>} />
 
         {/* Patient Routes */}
-        {/* <Route path="/patient/register" element={<PatientRegistration />} />
+        <Route path="/patient/register" element={<PatientRegistration />} />
         <Route path="/patient/request" element={<ProtectedRoute role="patient"><BloodRequestForm /></ProtectedRoute>} />
-        <Route path="/patient/history" element={<ProtectedRoute role="patient"><RequestHistory /></ProtectedRoute>} /> */}
+        <Route path="/patient/history" element={<ProtectedRoute role="patient"><RequestHistory /></ProtectedRoute>} />
 
         {/* Error Routes */}
         <Route path="/unauthorized" element={<Unauthorized />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-   </router>
     </>
   );
 };

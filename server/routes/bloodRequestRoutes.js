@@ -1,13 +1,14 @@
-// const express = require('express');
-// const router = express.Router();
-// const {
-//   requestBlood,
-//   getRequests,
-//   updateRequestStatus,
-// } = require('../controllers/bloodRequestController');
+import express from 'express';
+import {
+  requestBlood,
+  getRequests,
+  updateRequestStatus,
+} from '../controllers/bloodRequestController.js';
 
-// router.post('/', requestBlood);
-// router.get('/', getRequests);
-// router.put('/:id', updateRequestStatus);
+const router = express.Router();
 
-// module.exports = router;
+router.post('/', requestBlood);
+router.get('/', getRequests);
+router.put('/:id', updateRequestStatus);
+
+export default router;

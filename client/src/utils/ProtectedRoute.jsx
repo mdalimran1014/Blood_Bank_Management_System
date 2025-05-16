@@ -1,16 +1,12 @@
+// utils/ProtectedRoute.jsx
 import React from "react";
 import { Navigate } from "react-router-dom";
-
-// Simulate token/role fetching from localStorage
-const getUser = () => {
-  const user = localStorage.getItem("user");
-  return user ? JSON.parse(user) : null;
-};
+import { useAuth } from "../context/useAuth"; // Make sure the path is correct
 
 const ProtectedRoute = ({ children, role }) => {
-  const user = getUser();
+  const { user, isAuthenticated } = useAuth();
 
-  if (!user || !user.token) {
+  if (!isAuthenticated || !user?.token) {
     return <Navigate to="/login" replace />;
   }
 

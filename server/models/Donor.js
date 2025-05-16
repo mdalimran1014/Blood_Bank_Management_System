@@ -1,3 +1,19 @@
+import mongoose from 'mongoose';
+
+const donorSchema = new mongoose.Schema(
+  {
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    bloodType: { type: String, required: true },
+    lastDonationDate: { type: Date },
+    phone: String,
+    address: String,
+  },
+  { timestamps: true }
+);
+
+export default mongoose.model('Donor', donorSchema);
+
+
 // import mongoose from 'mongoose';
 
 // const donorSchema = new mongoose.Schema({
@@ -12,3 +28,4 @@
 // }, { timestamps: true });
 
 // export default mongoose.model('Donor', donorSchema);
+

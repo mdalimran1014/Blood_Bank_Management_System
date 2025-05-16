@@ -1,10 +1,30 @@
-// const Hospital = require('../models/Hospital');
+// controllers/hospitalController.js
+import Hospital from '../models/Hospital.js';
+
+export const registerHospital = async (req, res) => {
+  try {
+    const hospital = await Hospital.create(req.body);
+    res.status(201).json(hospital);
+  } catch {
+    res.status(500).json({ message: 'Hospital registration failed' });
+  }
+};
+
+export const getHospitals = async (req, res) => {
+  const hospitals = await Hospital.find();
+  res.json(hospitals);
+};
+
+
+
+
+// import Hospital from '../models/Hospital.js';
 
 // // Register a new hospital
-// exports.registerHospital = async (req, res) => {
+// export const registerHospital = async (req, res) => {
 //   try {
 //     const { name, contact_number, email, street_address, city, state, zip_code } = req.body;
-    
+
 //     const newHospital = new Hospital({
 //       name,
 //       contact_number,
@@ -23,7 +43,7 @@
 // };
 
 // // Get all hospitals (Admin)
-// exports.getAllHospitals = async (req, res) => {
+// export const getAllHospitals = async (req, res) => {
 //   try {
 //     const hospitals = await Hospital.find();
 //     res.json(hospitals);
